@@ -1,0 +1,19 @@
+Jim develops 5 Java applications a year. Joe develops 10 Java applications a year. Jim gets paid $5000.00 per application, but Joe gets paid $10000.00 per application.
+
+1.) What type of equation would you create to determine how much either Joe or Jim makes separately? What equation is needed in Java (ignoring the $ symbol)? What data type is needed need for this equation?
+
+If Joe
+	then x + 5000
+else
+	x + 10000
+where x is number of applications.
+
+2.) What type of equation would you create to determine the combined total of Joe and Jim's worth? What is the equation in Java? What would be an incorrect way of writing this equation (think parentheses)?
+
+(x + 5000) + (y + 10000) = combinedworth where x is the number of apps for Jim and y is the number of apps for Joe.
+
+The incorrect way to do this would be something like this:
+
+x + 5000 + y + 10000 = notcombindworth.
+
+This would not work since it adds 15000 to both x and y.

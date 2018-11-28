@@ -1,0 +1,51 @@
+package Code.looping;
+
+import edu.cmu.ri.createlab.terk.robot.finch.Finch;
+
+/**
+ * Created by: Kris Babcock
+ * Date: 10/28/2015
+ * Final Milestone for IT450. The Maze Runner
+ * On my robot, the right sensor works better than the left,
+ * so it will turn left more often than not. Hope you have better luck!
+ * Enjoy
+ */
+
+public class FinalMilestone
+   {
+   public static void main(final String[] args)
+      {
+      // The Finch object
+      Finch myFinch = new Finch();
+
+      // Do all together when the finch is on the ground
+      while(!myFinch.isBeakDown()) {
+          
+        // If there's an obstacle on the right, set LED to red,
+        // and turn left. I turned the time down to 250
+        // so it basically follows a wall. 
+        if(myFinch.isObstacleRightSide()) {
+            myFinch.setLED(255,0,0);
+            myFinch.setWheelVelocities(-127, 127, 250);
+            myFinch.buzz(800, 500);
+        }
+        // If there's an obstacle on the right, set LED to yellow,
+        // and turn left. I turned the time down to 250
+        // so it basically follows a wall. 
+        else if(myFinch.isObstacleLeftSide()) {
+            myFinch.setLED(255,255,0);
+            myFinch.setWheelVelocities(127,-127, 250);
+            myFinch.buzz(800, 500);
+        }
+        // Robot goes straight with LED set to white.
+        else {
+            myFinch.setWheelVelocities(204,204);
+            myFinch.setLED(255,255,255);
+        }
+       }
+
+      // Always end your program with finch.quit()
+      myFinch.quit();
+      System.exit(0);
+      }
+}
